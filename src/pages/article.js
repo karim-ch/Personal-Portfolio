@@ -9,16 +9,20 @@ const ArticlePage = ({ location }) => {
   const { data } = useArticles(articleUID)
 
   return (
-      <>
-          {data && (
-              <Layout>
-                  <>
-                      <SEO title={data.title.text || ""} />
-                      <Article article={data} />
-                  </>
-              </Layout>
-          )}
-      </>
+    <>
+      {data && (
+        <Layout>
+          <>
+            <SEO
+              description={data?.description?.text || ""}
+              title={data?.title?.text || ""}
+              type="article"
+            />
+            <Article article={data} />
+          </>
+        </Layout>
+      )}
+    </>
   )
 }
 

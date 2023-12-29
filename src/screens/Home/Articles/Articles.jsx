@@ -4,6 +4,7 @@ import withStyle from "./withStyle"
 import useArticles from "./useArticles"
 import { Icon } from "../../../components/icons"
 import useConfig from "../../../shared/hooks/useconfig"
+import { Link } from "gatsby"
 
 const Articles = ({ className }) => {
   const articles = useArticles()
@@ -22,8 +23,8 @@ const Articles = ({ className }) => {
         </div>
       </div>
       <div className="btn-container">
-        <a
-          href={github.url}
+        <Link
+          to={"/blog"}
           className="btn-see-more"
           target="_blank"
           rel="noopener noreferrer"
@@ -32,7 +33,7 @@ const Articles = ({ className }) => {
           <span className="arrow">
             <Icon name="Arrow" />
           </span>
-        </a>
+        </Link>
       </div>
     </section>
   )

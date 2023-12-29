@@ -31,6 +31,9 @@ const useArticles = articleUid => {
             date {
               text
             }
+            seo {
+              text
+            }
           }
         }
       }
@@ -44,7 +47,7 @@ const useArticles = articleUid => {
   if (articleUid && articleUid.length > 2) {
     return edges.find(article => article.uid === articleUid) || {}
   } else if (articleUid) {
-    return null;
+    return null
   }
   return articles
 }

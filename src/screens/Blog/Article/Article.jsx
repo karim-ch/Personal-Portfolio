@@ -5,7 +5,6 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const Article = ({ className, article }) => {
-
   return (
     <div className={className}>
       <h1 className="article-title">{article?.title?.text}</h1>
@@ -17,10 +16,10 @@ const Article = ({ className, article }) => {
         />
       </div>
       <div className="article-body">
-        {article?.article?.raw?.map(slice => {
+        {article?.article?.raw?.map((slice, key) => {
           if (slice.type === "preformatted") {
             return (
-              <div className="code">
+              <div className="code" key={key}>
                 <SyntaxHighlighter language="javascript" style={atomOneLight}>
                   {slice?.text}
                 </SyntaxHighlighter>
@@ -28,7 +27,7 @@ const Article = ({ className, article }) => {
             )
           }
           return (
-            <div className="slice">
+            <div className="slice" key={key}>
               <RichText render={[slice]} />
             </div>
           )

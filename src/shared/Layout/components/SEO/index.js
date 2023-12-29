@@ -3,13 +3,14 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, title, type }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
+            siteUrl
             description
           }
         }
@@ -18,7 +19,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = title || site.siteMetadata?.title
 
   return (
     <Helmet
@@ -37,40 +38,50 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
+          property: `og:site_name`,
+          content: "Karim CHAARI Website",
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type,
         },
-      ].concat(meta)}
+        {
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl,
+        },
+        ...(type === "article"
+          ? [
+              {
+                property: "author",
+                content: "Karim CHAARI",
+              },
+              {
+                property: "article:author",
+                content: "Karim CHAARI",
+              },
+            ]
+          : []),
+      ]}
     />
   )
 }
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [
-    "software engineer",
-    "developer",
-    "javascript",
-    "web",
-    "react",
-    "angular",
-    "graphql",
-    "portfolio",
-    "freelance",
-    "nodejs",
-  ],
-  description: `Karim is a software engineer in Brussels`,
+  description: `Karim, a software engineer and JavaScript developer, specializes in web development with expertise in AWS, Azure, CI/CD, GraphQL, and DevOps. Offering freelance services with a focus on Node.js.`,
+  type: "website",
+  title: "Karim CHAARI portfolio",
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
+  description: PropTypes.string.isRequired,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  type: PropTypes.string,
 }
 
 export default SEO

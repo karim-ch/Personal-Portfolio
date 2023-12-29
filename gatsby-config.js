@@ -339,6 +339,15 @@ module.exports = {
                   placeholder: "date",
                 },
               },
+              seo: {
+                type: "StructuredText",
+                config: {
+                  single:
+                    "heading1,heading2,heading3,heading4,heading5,heading6",
+                  label: "seo",
+                  placeholder: "seo",
+                },
+              },
             },
           ],
         },

@@ -7,7 +7,7 @@ import { withScrollContext } from "shared/ScrollContext"
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="💻" />
+      <SEO title="Karim's Coding Corner" />
       <Home />
     </Layout>
   )

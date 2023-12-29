@@ -18,6 +18,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(res.errors)
     }
     res.data.allPrismicArticles.nodes.forEach(blog => {
+      console.log(blog)
       createPage({ path: "/blog/" + blog.uid, component: postTemplate })
     })
   })
