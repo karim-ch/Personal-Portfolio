@@ -41,8 +41,8 @@ const useArticles = articleUid => {
   const articles = edges.map(edge => {
     return { data: edge.data, uid: edge.uid }
   })
-  if (articleUid) {
-    return edges.find(article => article.uid === articleUid)
+  if (articleUid && articleUid.length > 2) {
+    return edges.find(article => article.uid === articleUid) || {}
   }
   return articles
 }

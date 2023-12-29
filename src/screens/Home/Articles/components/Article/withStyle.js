@@ -23,7 +23,7 @@ export default component => styled(component)`
   }
   .article-body {
     min-height: 35vh;
-    
+
     padding: 5% 1%;
     > p {
       color: ${themeGet("colors.navyShadow")};
