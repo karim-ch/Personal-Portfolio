@@ -1,0 +1,7 @@
+export { default as Mail } from "./Mail"
+export { default as Social } from "./Social"
+export { default as Main } from "./Main"
+export { default as Drawer } from "./Drawer"
+export { default as Footer } from "./Footer"
+export { default as SEO } from "./SEO"
+export { default as Navbar } from "./Navbar"
