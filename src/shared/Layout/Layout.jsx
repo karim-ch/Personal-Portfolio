@@ -28,6 +28,7 @@ const Layout = ({ children, className }) => {
     <ThemeProvider>
       <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
       </Helmet>
       <div className={className}>
         {drawerVisible && (

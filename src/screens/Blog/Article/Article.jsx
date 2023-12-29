@@ -4,7 +4,8 @@ import { RichText } from "prismic-reactjs"
 import SyntaxHighlighter from "react-syntax-highlighter"
 import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
-const Article = ({ className, article }) => {
+const Article = ({ className, article, uid }) => {
+  console.log(article)
   return (
     <div className={className}>
       <h1 className="article-title">{article?.title?.text}</h1>
@@ -32,6 +33,15 @@ const Article = ({ className, article }) => {
             </div>
           )
         })}
+      </div>
+      <div>
+        <div
+          id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id={process.env.GATSBY_CUSDIS_APP_ID}
+          data-page-id={uid}
+          data-page-title="Blog title"
+        ></div>
       </div>
     </div>
   )
