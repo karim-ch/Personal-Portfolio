@@ -43,6 +43,8 @@ const useArticles = articleUid => {
   })
   if (articleUid && articleUid.length > 2) {
     return edges.find(article => article.uid === articleUid) || {}
+  } else if (articleUid) {
+    return null;
   }
   return articles
 }

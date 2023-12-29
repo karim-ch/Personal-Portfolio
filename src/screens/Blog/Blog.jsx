@@ -7,7 +7,7 @@ const Blog = ({ className }) => {
     <div className={className}>
       <h1>Coming Soon...</h1>
       <Link to={"/"}>
-        <button> Back To Home </button>
+        <button> Back </button>
       </Link>
     </div>
   )
