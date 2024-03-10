@@ -5,10 +5,8 @@ import Article from "screens/Blog/Article"
 import useArticles from "../screens/Home/Articles/useArticles"
 
 const ArticlePage = ({ location }) => {
-  const articleUID = location.pathname.replace("/blog/", "")
-  console.log({articleUID})
+  const articleUID = location.pathname.replace("/blog/", "").replace("/", "")
   const { data } = useArticles(articleUID)
-  console.log({data})
 
   return (
     <>
