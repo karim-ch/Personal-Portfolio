@@ -10,7 +10,7 @@ const ArticlePage = ({ location }) => {
 
   return (
     <>
-      {data.data && (
+      {data?.data && (
         <Layout>
           <>
             <SEO
