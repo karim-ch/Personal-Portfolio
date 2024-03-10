@@ -6,7 +6,7 @@ import useArticles from "../screens/Home/Articles/useArticles"
 
 const ArticlePage = ({ location }) => {
   const articleUID = location.pathname.replace("/blog/", "").replace("/", "")
-  const { data } = useArticles(articleUID)
+  const { data = {} } = useArticles(articleUID)
 
   return (
     <>
