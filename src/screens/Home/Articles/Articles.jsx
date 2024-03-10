@@ -15,11 +15,17 @@ const Articles = ({ className }) => {
       <h2 className="heading"> I write about stuff </h2>
       <div className="articles-container">
         <div className="articles">
-          {articles.map((article, i) => (
-            <div className="article-item" key={i}>
-              <Article article={article} />
-            </div>
-          ))}
+          {articles
+            .sort((a, b) => {
+              return new Date(a.data.date.text) > new Date(b.data.date.text)
+                ? -1
+                : 1
+            })
+            .map((article, i) => (
+              <div className="article-item" key={i}>
+                <Article article={article} />
+              </div>
+            ))}
         </div>
       </div>
       <div className="btn-container">

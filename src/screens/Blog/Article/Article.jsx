@@ -5,7 +5,6 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 const Article = ({ className, article, uid }) => {
-  console.log(article)
   return (
     <div className={className}>
       <h1 className="article-title">{article?.title?.text}</h1>
