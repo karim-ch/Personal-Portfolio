@@ -41,14 +41,12 @@ const useArticles = articleUid => {
   `)
 
   const edges = get(data, "allPrismicArticles.nodes", [])
-  console.log({edges})
   const articles = edges.map(edge => {
-    console.log({ data: edge.data, uid: edge.uid })
     return { data: edge.data, uid: edge.uid }
   })
   if (articleUid && articleUid.length > 2) {
     console.log('article found')
-    return edges.find(article => article.uid === articleUid) || {}
+    return edges.find(article => article.uid === articleUid) || null
   } else if (articleUid) {
     return null
   }

@@ -34,13 +34,13 @@ const Article = ({ className, article, uid }) => {
         })}
       </div>
       <div>
-        {/*<div*/}
-        {/*  id="cusdis_thread"*/}
-        {/*  data-host="https://cusdis.com"*/}
-        {/*  data-app-id={process.env.GATSBY_CUSDIS_APP_ID}*/}
-        {/*  data-page-id={uid}*/}
-        {/*  data-page-title="Blog title"*/}
-        {/*></div>*/}
+        <div
+          id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id={process.env.GATSBY_CUSDIS_APP_ID}
+          data-page-id={uid}
+          data-page-title="Blog title"
+        ></div>
       </div>
     </div>
   )

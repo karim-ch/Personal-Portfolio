@@ -3,12 +3,10 @@ import Article from "./components/Article"
 import withStyle from "./withStyle"
 import useArticles from "./useArticles"
 import { Icon } from "../../../components/icons"
-import useConfig from "../../../shared/hooks/useconfig"
 import { Link } from "gatsby"
 
 const Articles = ({ className }) => {
   const articles = useArticles()
-  const { github } = useConfig()
 
   return (
     <section className={className}>

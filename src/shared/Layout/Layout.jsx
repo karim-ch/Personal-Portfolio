@@ -26,10 +26,10 @@ const Layout = ({ children, className }) => {
 
   return (
     <ThemeProvider>
-      {/*<Helmet>*/}
-      {/*  <script src={withPrefix("script.js")} type="text/javascript" />*/}
-      {/*  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>*/}
-      {/*</Helmet>*/}
+      <Helmet>
+        <script src={withPrefix("script.js")} type="text/javascript" />
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+      </Helmet>
       <div className={className}>
         {drawerVisible && (
           <Drawer toggle={toggle} isDrawerBeingClosed={isDrawerBeingClosed} />

@@ -4,7 +4,7 @@ import SEO from "shared/Layout/components/SEO"
 import Article from "screens/Blog/Article"
 import useArticles from "../screens/Home/Articles/useArticles"
 
-const ArticlePage = ({ location, uid }) => {
+const ArticlePage = ({ location }) => {
   const articleUID = location.pathname.replace("/blog/", "")
   console.log({articleUID})
   const { data } = useArticles(articleUID)
